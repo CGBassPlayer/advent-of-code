@@ -1,6 +1,6 @@
-package day03;
+package com.cgbassplayer.aoc2019.day03;
 
-import common.FileLoader;
+import com.cgbassplayer.aoc2019.common.FileLoader;
 import javafx.geometry.Point2D;
 
 import java.util.ArrayList;
@@ -8,8 +8,9 @@ import java.util.Collections;
 
 public class WireCrossing {
     public static void main(String[] args) {
-        ArrayList<int[]> wireAPositions = getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.dat", 1));
-        ArrayList<int[]> wireBPositions = getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.dat", 2));
+        ArrayList<int[]> wireAPositions = getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files" +
+                "/day03.txt", 1));
+        ArrayList<int[]> wireBPositions = getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.txt", 2));
 
         ArrayList<Integer> distances = getDistances(findAllCrossings(wireAPositions, wireBPositions));
 

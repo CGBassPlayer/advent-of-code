@@ -1,6 +1,6 @@
-package day03;
+package com.cgbassplayer.aoc2019.day03;
 
-import common.FileLoader;
+import com.cgbassplayer.aoc2019.common.FileLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,8 +8,9 @@ import java.util.Arrays;
 
 public class WireCrossingPart2 {
     public static void main(String[] args) {
-        ArrayList<int[]> wireAPositions = WireCrossing.getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.dat", 1));
-        ArrayList<int[]> wireBPositions = WireCrossing.getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.dat", 2));
+        ArrayList<int[]> wireAPositions = WireCrossing.getWirePositions(FileLoader.loadSingleLineCommaStringFile(
+                "input_files/day03.txt", 1));
+        ArrayList<int[]> wireBPositions = WireCrossing.getWirePositions(FileLoader.loadSingleLineCommaStringFile("input_files/day03.txt", 2));
 
         ArrayList<int[]> crossings = WireCrossing.findAllCrossings(wireAPositions, wireBPositions);
 

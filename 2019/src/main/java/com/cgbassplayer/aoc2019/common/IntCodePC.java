@@ -1,4 +1,4 @@
-package common;
+package com.cgbassplayer.aoc2019.common;
 
 import java.util.ArrayList;
 

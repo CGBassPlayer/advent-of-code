@@ -1,12 +1,12 @@
-package day01;
+package com.cgbassplayer.aoc2019.day01;
 
-import common.FileLoader;
+import com.cgbassplayer.aoc2019.common.FileLoader;
 
 import java.util.ArrayList;
 
 public class RocketEquation {
     public static void main(String[] args) {
-        ArrayList<Integer> rocketMass = FileLoader.loadNewLineIntFile("input_files/day01.dat");
+        ArrayList<Integer> rocketMass = FileLoader.loadNewLineIntFile("input_files/day01.txt");
         int totalFuel = 0;
 
         for (Integer mass : rocketMass) totalFuel += calculateFuel(mass);
@@ -21,6 +21,6 @@ public class RocketEquation {
      * @return required mass of fuel
      */
     static int calculateFuel(int mass) {
-        return (int) Math.floor(mass / 3) - 2;
+        return (int) Math.floor(mass / 3f) - 2;
     }
 }

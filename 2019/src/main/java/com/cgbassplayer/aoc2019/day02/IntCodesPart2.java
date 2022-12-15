@@ -1,6 +1,6 @@
-package day02;
+package com.cgbassplayer.aoc2019.day02;
 
-import common.FileLoader;
+import com.cgbassplayer.aoc2019.common.FileLoader;
 
 import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
@@ -8,7 +8,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class IntCodesPart2 {
     public static void main(String[] args) {
         while (true) {
-            ArrayList<Integer> codeList = FileLoader.loadCommaIntFile("input_files/day02.dat");
+            ArrayList<Integer> codeList = FileLoader.loadCommaIntFile("input_files/day02.txt");
             int noun = ThreadLocalRandom.current().nextInt(0, 99);
             int verb = ThreadLocalRandom.current().nextInt(0, 99);
             codeList.set(1, noun);

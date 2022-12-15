@@ -1,12 +1,12 @@
-package day02;
+package com.cgbassplayer.aoc2019.day02;
 
-import common.FileLoader;
+import com.cgbassplayer.aoc2019.common.FileLoader;
 
 import java.util.ArrayList;
 
 public class IntCodes {
     public static void main(String[] args) {
-        ArrayList<Integer> code = FileLoader.loadCommaIntFile("input_files/day02.dat");
+        ArrayList<Integer> code = FileLoader.loadCommaIntFile("input_files/day02.txt");
         code.set(1, 12);
         code.set(2, 2);
 
