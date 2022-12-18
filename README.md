@@ -10,8 +10,11 @@ in this repository.
 
 ### Updates I want to make
 
-- [ ] Convert 2019 java code to Gradle Project
-- [ ] Update 2022 documentation
+- [x] Convert 2019 Java code to Gradle Project
+- [ ] Update documentation
+  - [ ] 2019
+  - [ ] 2022
+- [ ] Refactor and optimize solutions
 
 
 ### Git Ignore
