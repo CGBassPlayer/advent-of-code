@@ -1,48 +1,64 @@
-from typing import List
+from typing import List, Dict
+
+Coordinate = tuple[int, int]
+Instruction = tuple[str, int]
 
 
-def move(instruction: str) -> tuple[int, int]:
-    movement: tuple[int, int] = (0, 0)
-    tokens: tuple[str, str] = (instruction.split()[0], instruction.split()[1])
+def find_neighbors(pos: Coordinate) -> list[Coordinate]:
+    x0, y0 = pos
+    # candidates = [
+    return [
+        (x0, y0),
+        (x0 - 1, y0),
+        (x0 + 1, y0),
+        (x0, y0 - 1),
+        (x0, y0 + 1),
+        (x0 - 1, y0 - 1),
+        (x0 + 1, y0 + 1),
+        (x0 - 1, y0 + 1),
+        (x0 + 1, y0 - 1),
+    ]
 
-    if tokens[0] == 'U':
-        movement = (0, int(tokens[1]) * -1)
-    elif tokens[0] == "D":
-        movement = (0, int(tokens[1]))
-    elif tokens[0] == "L":
-        movement = (int(tokens[1]) * -1, 0)
-    elif tokens[0] == "R":
-        movement = (int(tokens[1]), 0)
 
-    return movement
+def move(current_position: Coordinate, direction: Instruction) -> List[Coordinate]:
+    positions: List[Coordinate] = []
+    x, y = current_position
+    d, amount = direction
+    for i in range(amount):
+        if d == "U":
+            y += 1
+        elif d == "D":
+            y -= 1
+        elif d == "L":
+            x -= 1
+        elif d == "R":
+            x += 1
+        positions.append((x, y))
+    return positions
 
 
-def part1(moves: str) -> int:
-    with open(moves) as f:
+def part1(input: str) -> int:
+    with open(input) as f:
         lines: List[str] = f.readlines()
 
-    head_x: int = 0
-    head_y: int = 0
-    tail_x: int = 0
-    tail_y: int = 0
+    grid: Dict[Coordinate, int] = {}
+    head_position: Coordinate = (0, 0)
+    tail_position: Coordinate = (0, 0)
 
-    visited_tail_positions: List[tuple[int, int]] = [(0, 0)]
-
+    grid.setdefault(tail_position, 1)
     for line in lines:
-        x, y = move(line)
-        # print(x, y)
-        for i in range(0, x):
-            head_x += 1
-        for i in range(x, 0):
-            head_x -= 1
-        for i in range(0, y):
-            head_y += 1
-        for i in range(y, 0):
-            head_y -= 1
-        print(head_x, head_y)
-
-    return -1
+        instruction: Instruction = (line.split()[0], int(line.split()[1]))
+        grid.setdefault(head_position, 0)
+        move_list: List[Coordinate] = move(head_position, instruction)
+        for m in move_list:
+            grid.setdefault(m, 0)
+            previous_move: Coordinate = head_position
+            head_position = m
+            if tail_position not in find_neighbors(head_position):
+                tail_position = previous_move
+                grid[tail_position] = 1
+    return sum(v for v in grid.values() if v == 1)
 
 
 if __name__ == '__main__':
-    print(f"Part 1: {part1(moves='input.txt')}")
+    print(f"Part 1: {part1(input='input.txt')}")
