@@ -2,9 +2,9 @@ package com.cgbassplayer.aoc2019.days;
 
 import com.cgbassplayer.aoc2019.common.Day;
 import com.cgbassplayer.aoc2019.common.Point2D;
+import com.cgbassplayer.aoc2019.utils.InputUtils;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -17,7 +17,7 @@ public class Day03 extends Day<Integer, Integer> {
     @Override
     protected Integer partOne() {
         List<String> wire1 = singleLineInput; // Line 1
-        List<String> wire2 = Arrays.stream(multiLineInput.get(1).split(",")).toList(); // Line 2
+        List<String> wire2 = InputUtils.getStringListFromLine(multiLineInput, 1, ",");
 
         List<Point2D> wire1Positions = getWirePositions(wire1);
         List<Point2D> wire2Positions = getWirePositions(wire2);
@@ -28,7 +28,7 @@ public class Day03 extends Day<Integer, Integer> {
     @Override
     protected Integer partTwo() {
         List<String> wire1 = singleLineInput; // Line 1
-        List<String> wire2 = Arrays.stream(multiLineInput.get(1).split(",")).toList(); // Line 2
+        List<String> wire2 = InputUtils.getStringListFromLine(multiLineInput, 1, ",");
 
         List<Point2D> wire1Positions = getWirePositions(wire1);
         List<Point2D> wire2Positions = getWirePositions(wire2);
