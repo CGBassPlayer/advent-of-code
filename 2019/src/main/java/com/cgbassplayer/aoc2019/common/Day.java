@@ -4,6 +4,10 @@ import lombok.Data;
 
 import java.util.List;
 
+/**
+ * @param <T0> Return type for part 1
+ * @param <T1> Return type for part 2
+ */
 @Data
 public abstract class Day<T0, T1> {
 
