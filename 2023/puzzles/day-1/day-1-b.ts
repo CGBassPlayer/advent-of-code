@@ -1,12 +1,16 @@
 import {
   readData,
-  filterOutNaN,
-  toNumberArray
+  sumOfArray
 } from '../../common/index.ts';
 import chalk from 'chalk';
 
+interface FoundNumber {
+  index: number,
+  value: number
+}
+
 export async function day1b(dataPath?: string) {
-  const numberStrings = [
+  const lookup = [
     { num: 1, str: "one" },
     { num: 2, str: "two" },
     { num: 3, str: "three" },
@@ -30,12 +34,33 @@ export async function day1b(dataPath?: string) {
   const data = await readData(dataPath);
   let calibrationValues: number[] = [];
   data.forEach((line) => {
-    const nums = filterOutNaN(toNumberArray([...line]))
-    const foundNumber = `${nums[0]}${nums[nums.length - 1]}`;
-    calibrationValues.push(+foundNumber)
+    let firstFound: FoundNumber = { index: -1, value: -1 };
+    let lastFound: FoundNumber = { index: -1, value: -1 };
+    for (const item of lookup) {
+      const firstIdx = line.indexOf(item.str);
+      if (firstIdx === -1)
+        continue;
+      if (firstIdx < firstFound.index || firstFound.index === -1) {
+        firstFound = { index: firstIdx, value: item.num };
+      }
+      if (firstIdx > lastFound.index) {
+        lastFound = { index: firstIdx, value: item.num };
+      }
+      const lastIdx = line.lastIndexOf(item.str);
+      if (lastIdx === firstIdx)
+        continue;
+      if (lastIdx < firstFound.index || firstFound.index === -1) {
+        firstFound = { index: lastIdx, value: item.num };
+      }
+      if (lastIdx > lastFound.index) {
+        lastFound = { index: lastIdx, value: item.num };
+      }
+    }
+    console.log(`${firstFound.value}${lastFound.value}`);
+    calibrationValues.push(+`${firstFound.value}${lastFound.value}`);
   });
 
-  return 0;
+  return sumOfArray(calibrationValues);
 }
 
 const answer = await day1b();
