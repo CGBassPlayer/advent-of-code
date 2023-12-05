@@ -3,10 +3,11 @@
 These are my solutions for [Advent of Code](https://www.adventofcode.com/). All solutions for all years will be stored
 in this repository.
 
-| Year | Language |                                              |                   | Days Completed |
-|------|----------|----------------------------------------------|-------------------|----------------|
-| 2022 | Python   | [Puzzles](https://www.adventofcode.com/2022) | [Solutions](2022) | 10             |
-| 2019 | Java     | [Puzzles](https://www.adventofcode.com/2019) | [Solutions](2019) | 4              |
+| Year | Language   |                                              |                   | Days Completed |
+|------|------------|----------------------------------------------|-------------------|----------------|
+| 2022 | Typescript | [Puzzles](https://www.adventofcode.com/2023) | [Solutions](2023) | 1              |
+| 2022 | Python     | [Puzzles](https://www.adventofcode.com/2022) | [Solutions](2022) | 10             |
+| 2019 | Java       | [Puzzles](https://www.adventofcode.com/2019) | [Solutions](2019) | 4              |
 
 ### Updates I want to make
 
