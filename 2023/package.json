@@ -2,6 +2,10 @@
   "name": "aoc-2023",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Ryan Goodwin"
+  },
   "scripts": {
     "day-1-a": "nx day-1-a",
     "day-1-a:sample": "nx day-1-a --data=sample",
@@ -104,10 +108,9 @@
     "day-25-b": "nx day-25-b",
     "day-25-b:sample": "nx day-25-b --data=sample"
   },
-  "private": true,
   "dependencies": {
     "chalk": "latest",
-    "aoc-2023": "1.0.4"
+    "ts-aoc-starter": "1.0.4"
   },
   "devDependencies": {
     "@nx/workspace": "17.1.3",
