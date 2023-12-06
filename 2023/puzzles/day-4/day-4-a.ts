@@ -1,8 +1,9 @@
-import { CANCELLED } from 'dns';
-import { readData } from '../../common/shared.ts';
 import chalk from 'chalk';
-import { toNumberArray } from '../../common/map.ts';
-import { sumOfArray } from '../../common/math.ts';
+import {
+  readData,
+  sumOfArray,
+  toNumberArray
+} from '../../common/index.ts';
 
 interface Card {
   cardNumber: number
@@ -31,7 +32,6 @@ export async function day4a(dataPath?: string) {
     }
     scores.push(score);
   });
-  console.log(scores);
 
   return sumOfArray(scores);
 }
