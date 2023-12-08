@@ -16,13 +16,11 @@ export async function day6a(dataPath?: string) {
 
     for (let i=0; i<race.time; i++) {
       if (race.distance < calculateDistance(race.time, i)) {
-        console.log(`Holding ${i}ms wins`);
         winCount++
       }
     }
     waysToWin.push(winCount);
   }
-  console.log(waysToWin);
 
   return productOfArray(waysToWin);
 }
