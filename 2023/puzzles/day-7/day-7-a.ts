@@ -33,6 +33,7 @@ export async function day7a(dataPath?: string) {
   let turns = getAllTurns(data);
 
   turns.sort((a, b) => {
+    // occurrences
     const aMax = Math.max.apply(Math, a.cards.map(function (o) { return o.count }));
     const bMax = Math.max.apply(Math, b.cards.map(function (o) { return o.count }));
     if (aMax > bMax) {
@@ -68,6 +69,7 @@ export async function day7a(dataPath?: string) {
       }
     }
 
+    // Card value check
     let cardIdx = 0
     while (cardIdx < a.hand.length) {
       const aCardStrength = CARD_STRENGTH.findIndex(item => item.card === a.hand[cardIdx]);
@@ -88,17 +90,11 @@ export async function day7a(dataPath?: string) {
     totalWinnigs.push(turn.bid * (rank + 1));
   });
 
-  // console.table(turns);
-  // turns.forEach((turn) => {console.table(turn.cards)});
-
   return sumOfArray(totalWinnigs);
 }
 
 const answer = await day7a();
 console.log(chalk.bgGreen('Your Answer:'), chalk.green(answer));
-// 249737949 Too low
-// 250152525 Too low
-// 250232501
 
 
 function getAllTurns(data: string[]): Turn[] {
