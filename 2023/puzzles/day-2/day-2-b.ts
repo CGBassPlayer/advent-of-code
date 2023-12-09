@@ -13,7 +13,7 @@ interface GameData {
   sets: Set[]
 }
 
-export async function day2a(dataPath?: string) {
+export async function day2b(dataPath?: string) {
   const data = await readData(dataPath);
   const colorPowers = [];
   data.forEach((line) => {
@@ -37,7 +37,7 @@ export async function day2a(dataPath?: string) {
   return sumOfArray(colorPowers);
 }
 
-const answer = await day2a();
+const answer = await day2b();
 console.log(chalk.bgGreen('Your Answer:'), chalk.green(answer));
 
 function parseLine(line: string): GameData {
