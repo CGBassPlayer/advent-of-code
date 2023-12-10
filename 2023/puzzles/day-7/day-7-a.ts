@@ -51,13 +51,13 @@ export async function day7a(dataPath?: string) {
       if (aCounts.includes(2) && !bCounts.includes(2)) {
         return 1;
       }
-      if  (!aCounts.includes(2) && bCounts.includes(2)) {
+      if (!aCounts.includes(2) && bCounts.includes(2)) {
         return -1;
       }
     }
 
     // 2 Pairs vs 2 of a kind
-    if (aMax ===2  && bMax === 2) {
+    if (aMax === 2 && bMax === 2) {
       const aCounts = a.cards.map(function (o) { return o.count });
       const bCounts = b.cards.map(function (o) { return o.count });
 
@@ -85,7 +85,7 @@ export async function day7a(dataPath?: string) {
     return 0;
   });
 
-  const totalWinnigs: number [] = []
+  const totalWinnigs: number[] = []
   turns.forEach((turn, rank) => {
     totalWinnigs.push(turn.bid * (rank + 1));
   });
