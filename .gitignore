@@ -497,7 +497,7 @@ gradle-app.setting
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,python,jetbrains,visualstudiocode,node
 
 # nx cache (2023)
-.nx/cache
+**/.nx/cache
 
 # AoC Puzzle Inputs
 *.data.txt

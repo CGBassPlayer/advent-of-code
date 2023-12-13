@@ -85,7 +85,7 @@ function getAllTurns(data: string[]): Turn[] {
 
         frequency.set(key, frequency.get(key) + 1);
       } else {
-        frequency["*"] = 1;
+        frequency.set("*", 1);
       }
     }
 

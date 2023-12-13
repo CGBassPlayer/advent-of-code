@@ -5,7 +5,7 @@ in this repository.
 
 | Year | Language   |                                              |                   | Days Completed |
 |------|------------|----------------------------------------------|-------------------|----------------|
-| 2023 | Typescript | [Puzzles](https://www.adventofcode.com/2023) | [Solutions](2023) | 6              |
+| 2023 | Typescript | [Puzzles](https://www.adventofcode.com/2023) | [Solutions](2023) | 7              |
 | 2022 | Python     | [Puzzles](https://www.adventofcode.com/2022) | [Solutions](2022) | 10             |
 | 2019 | Java       | [Puzzles](https://www.adventofcode.com/2019) | [Solutions](2019) | 4              |
 
