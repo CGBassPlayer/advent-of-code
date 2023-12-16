@@ -36,3 +36,21 @@ export const filterOutNaN = (list: number[]) => list.filter((n) => !isNaN(n));
  */
 export const filterOut = <T>(list: T[], val: T) =>
 	list.filter((i) => i !== val);
+
+export const allTrue = (values: boolean[]) => {
+	for (const val of values) {
+		if (!val) {
+			return false;
+		}
+	}
+	return true;
+}
+
+export const allFalse = (values: boolean[]) => {
+	for (const val of values) {
+		if (val) {
+			return false;
+		}
+	}
+	return true;
+}
