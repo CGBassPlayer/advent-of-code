@@ -1,5 +1,5 @@
 {
-  "name": "ts-aoc-starter",
+  "name": "aoc-2023",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "targets": {
     "day-1-a": {

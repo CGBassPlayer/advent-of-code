@@ -54,3 +54,5 @@ export const allFalse = (values: boolean[]) => {
 	}
 	return true;
 }
+
+export const allEqual = (arr: any[]) => arr.every((i) => i === arr[0]);
