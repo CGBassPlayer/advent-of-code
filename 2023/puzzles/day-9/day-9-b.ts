@@ -42,11 +42,3 @@ function addPredictionsToList(extrapolatedList: number[][]): number[][] {
     }
   return extrapolatedList;
 }
-
-// function addPredictionsToList(extrapolatedList: number[][]): number[][] {
-//   extrapolatedList[extrapolatedList.length - 1].push(extrapolatedList[extrapolatedList.length - 1][0]);
-//   for (let i = extrapolatedList.length - 2; i>=0; i--) {
-//     extrapolatedList[i].push(extrapolatedList[i][extrapolatedList[i].length - 1] + extrapolatedList[i + 1][extrapolatedList[i].length - 1])
-//   }
-//   return extrapolatedList
-// }
