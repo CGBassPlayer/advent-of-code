@@ -15,6 +15,8 @@ export async function day9a(dataPath?: string) {
     }
 
     extrapolated = addPredictionsToList(extrapolated);
+    // console.log(sequence);
+    // console.table(extrapolated);
 
     predicitions.push(sequence[sequence.length - 1] + extrapolated[0][extrapolated[0].length - 1]);
   }
