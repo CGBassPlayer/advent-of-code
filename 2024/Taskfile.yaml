@@ -1,0 +1,40 @@
+version: '3'
+
+vars:
+  CURRENT_DAY: '02'
+
+tasks:
+  new_day:
+    dir: aoc_2024
+    cmds:
+      - mkdir -p day{{.CURRENT_DAY}}
+      - cp ../day.py.tpl day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.py
+      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.sample.txt
+      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.input.txt
+
+  solve_day:
+    deps:
+      - enter_venv
+    cmds:
+      - python aoc_2024/day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.py
+
+  sample_day:
+    deps:
+      - enter_venv
+    cmds:
+      - .venv/bin/python python aoc_2024/day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.py sample
+
+  setup_venv:
+    dir: .
+    desc: "Setup python virtual environment"
+    cmds:
+      - rm -rf ./.venv
+      - python3 -m venv .venv
+      - task: enter_venv
+      - pip install -r requirements.txt
+
+  enter_venv:
+    dir: .
+    desc: Enter Virtual Environment
+    cmds:
+      - source .venv/bin/activate
