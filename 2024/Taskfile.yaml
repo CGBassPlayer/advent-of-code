@@ -1,7 +1,7 @@
 version: '3'
 
 vars:
-  CURRENT_DAY: '02'
+  CURRENT_DAY: '03'
 
 tasks:
   new_day:
@@ -9,8 +9,8 @@ tasks:
     cmds:
       - mkdir -p day{{.CURRENT_DAY}}
       - cp ../day.py.tpl day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.py
-      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.sample.txt
-      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.input.txt
+      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.data.txt
+      - touch day{{.CURRENT_DAY}}/day{{.CURRENT_DAY}}.sample-data.txt
 
   solve_day:
     deps:
